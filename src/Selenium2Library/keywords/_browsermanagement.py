@@ -103,6 +103,7 @@ class _BrowserManagementKeywords(KeywordGroup):
         browser_name = browser
         browser = self._make_browser(browser_name,desired_capabilities,ff_profile_dir,remote_url)
         browser.get(url)
+        browser.maximize_window()
         self._debug('Opened browser with session id %s'
                     % browser.session_id)
         return self._cache.register(browser, alias)
